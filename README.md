@@ -180,8 +180,3 @@ In this project, the following tables are defined.Processed data are stored in a
 The table schema can be visualized by using Entity Relational Diagram. The following figure describe the table schema of the project.
 
 ![](./ERDiagram.png)
-
-## Table Design of redshift
-
-Redshit is columnar 
-
