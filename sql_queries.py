@@ -82,7 +82,7 @@ diststyle all;
 
 song_table_create = ("""
 create table if not exists songs (
-song_id varchar(18) not null sortkey,
+song_id varchar(18) not null primary key sortkey ,
 title varchar(max) not null,
 artist_id varchar(18) not null,
 year int,
@@ -94,7 +94,7 @@ diststyle all;
 
 artist_table_create = ("""
 create table if not exists artists (
-artist_id varchar(18) not null sortkey,
+artist_id varchar(18) not null primary key sortkey,
 name varchar(max) not null,
 location varchar(max),
 latitude numeric(8, 5),
@@ -105,7 +105,7 @@ diststyle all;
 
 time_table_create = ("""
 create table if not exists time (
-start_time bigint not null sortkey,
+start_time bigint not null primary key sortkey,
 hour int not null,
 day int not null,
 week int not null,

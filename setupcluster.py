@@ -6,6 +6,7 @@ import boto3
 
 
 def main():
+    """Setup redshift cluster by using the configuration file"""
     config = configparser.ConfigParser()
     config.read_file(open('dwh.cfg'))
 
@@ -36,7 +37,7 @@ def main():
     })
 
     # show configs
-    for i, row in settings.iterrows():
+    for _, row in settings.iterrows():
         print(row["Param"], row["Value"])
 
     redshift = boto3.client('redshift', region_name="us-west-2",

@@ -4,16 +4,17 @@ from create_tables import get_hostname
 
 
 def main():
+    """Confirm that the data are correctly imported"""
     config = configparser.ConfigParser()
     config.read('dwh.cfg')
 
     hostname = get_hostname(config)
     conn = psycopg2.connect("host={} dbname={} user={} password={} port={}".format(
         hostname,
-        config.get("CLUSTER","DB_NAME"),
-        config.get("CLUSTER","DB_USER"),
-        config.get("CLUSTER","DB_PASSWORD"),
-        config.get("CLUSTER","DB_PORT"))
+        config.get("CLUSTER", "DB_NAME"),
+        config.get("CLUSTER", "DB_USER"),
+        config.get("CLUSTER", "DB_PASSWORD"),
+        config.get("CLUSTER", "DB_PORT"))
     )
 
     cur = conn.cursor()
