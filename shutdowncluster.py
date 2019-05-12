@@ -4,6 +4,7 @@ import boto3
 
 
 def main():
+    """Shutdown created redshift cluster"""
     config = configparser.ConfigParser()
     config.read_file(open('dwh.cfg'))
 
